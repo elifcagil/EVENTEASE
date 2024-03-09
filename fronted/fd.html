@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>eventEase - Welcome</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>
+    .image-row {
+      display: none; /* Resim sırasını başlangıçta gizle */
+      justify-content: space-between;
+      margin-bottom: 20px;
+      align-items: center; /* Dikeyde merkezleme */
+      font-size: 30px;
+    }
+
+    .image-row.show {
+      display: flex; /* Butona tıklandığında resimleri göster */
+    }
+
+    .image-row img {
+      width: calc(16.666% - 10px); /* %16.666'lik genişlik, 10 piksel margin */
+      border-radius: 50%;
+    }
+
+    @media screen and (max-width: 768px) {
+      .image-row {
+        flex-wrap: wrap;
+      }
+
+      .image-row img {
+        width: calc(33.333% - 10px); /* %33.333'lik genişlik, 10 piksel margin */
+        margin-bottom: 10px;
+      }
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(to bottom right, #8e2de2, #4a69bd);
+      color: #fff;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      position: relative;
+    }
+
+    header h1 {
+      font-size: 36px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+    }
+
+    main {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .content,
+    .events {
+      margin-bottom: 40px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .events ul {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between; /* Kutuları eşit aralıklarla yatayda sıralar */
+    }
+
+    .events li {
+      position: relative;
+      width: calc(33.333% - 60px); /* %33.333'lik genişlik, 20 piksel margin */
+      height: 300px;
+      background-color: rgba(255, 255, 255, 0.8);
+      border-radius: 10px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      margin-bottom: 20px;
+      transition: all 0.3s ease-in-out;
+    }
+
+    .events li:hover {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transform: translateY(-2px);
+    }
+
+    .events li .join-button {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 5px 10px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 768px) {
+      .events li {
+        width: calc(50% - 20px); /* %50'lik genişlik, 20 piksel margin */
+      }
+    }
+
+    @media screen and (max-width: 480px) {
+      .events li {
+        width: 100%; /* Tam genişlik */
+      }
+    }
+
+    .show-images-button {
+      font-size: 24px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .show-images-button img {
+      display: none; /* Buton üzerindeki resmi gizle */
+    }
+
+    .profile-button {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      background-color: #ffffff;
+      color: #000000;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .wallet-info {
+      position: absolute;
+      top: 60px;
+      right: 25px;
+      padding: 5px 10px;
+      background-color: #ffffff;
+      color: #000000;
+      border-radius: 5px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to eventEase</h1>
+    <p>Discover, Plan, and Attend Events Hassle-free!</p>
+    <button class="profile-button">Profile</button>
+    <div class="wallet-info">
+      <span>Wallet</span>
+    </div>
+  </header>
+  <main>
+    <button class="show-images-button" onclick="toggleImages()">My NFT</button>
+    <section class="content">
+      <h2>About Us</h2>
+      <p>eventEase is your go-to platform for discovering and planning events in your area. With a user-friendly interface and powerful features, we make it easy for you to find and attend events that interest you.</p>
+    </section>
+    <section class="gallery image-row"> <!-- image-row sınıfını ekledik -->
+      <div class="image-row">
+        <img src="1ates.png" alt="Image 1">Start
+        <img src="2ates.png" alt="Image 2">XP = 100
+        <img src="3ates.png" alt="Image 3">XP = 200
+      </div>
+    </section>
+    <section class="gallery image-row"> <!-- image-row sınıfını ekledik -->
+      <div class="image-row">
+        <img src="4ates.png" alt="Image 4">XP = 300
+        <img src="5ates.png" alt="Image 5">XP = 400
+        <img src="6ates.png" alt="Image 6">XP = 500
+      </div>
+    </section>
+    <section class="events">
+      <h2>Upcoming Events</h2>
+      <ul>
+        <li>Event 1 - Date & Time <button class="join-button">Join</button></li>
+        <li>Event 2 - Date & Time <button class="join-button">Join</button></li>
+        <li>Event 3 - Date & Time <button class="join-button">Join</button></li>
+        <li>Event 4 - Date & Time <button class="join-button">Join</button></li>
+        <li>Event 5 - Date & Time <button class="join-button">Join</button></li>
+        <li>Event 6 - Date & Time <button class="join-button">Join</button></li>
+      </ul>
+    </section>
+  </main>
+  <script>
+    function toggleImages() {
+      var imageRows = document.querySelectorAll('.image-row');
+      imageRows.forEach(function(imageRow) {
+        imageRow.classList.toggle('show');
+      });
+    }
+  </script>
+</body>
+</html>
